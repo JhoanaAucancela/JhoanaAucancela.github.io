@@ -18,7 +18,6 @@ public class ComentariosController {
         this.comentariosService= comentariosService;
     }
 
-
     @GetMapping
     public  List<Comentarios> GetComentarios() throws ClassNotFoundException {
         return this.comentariosService.GetComentarios();
