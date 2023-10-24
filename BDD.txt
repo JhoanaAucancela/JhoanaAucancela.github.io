@@ -1,0 +1,36 @@
+-----Host BDD --------
+https://phpmyadmin.alwaysdata.com/
+
+DB_CONNECTION=mysql
+DB_HOST=mysql-jhoanaaucancela.alwaysdata.net
+DB_PORT=3306
+DB_DATABASE=jhoanaaucancela_foro
+DB_USERNAME=322741
+DB_PASSWORD=jhoanasistemas
+
+-----Script-----------
+CREATE TABLE Usuarios
+(
+  Usu_Codigo Int NOT NULL,
+  Usu_Nombre Varchar(100),
+  Usu_Url Varbinary(500),
+  Usu_Estado Char(1)
+)
+;
+
+ALTER TABLE Usuarios ADD PRIMARY KEY (Usu_Codigo)
+;
+
+-- Table Comentarios
+
+CREATE TABLE Comentarios
+(
+  Com_Codigo Int NOT NULL,
+  Com_Comentario Varchar(500),
+  Com_Estado Char(1),
+  Usu_Codigo Int NOT NULL
+)
+;
+
+ALTER TABLE Comentarios ADD PRIMARY KEY (Com_Codigo, Usu_Codigo)
+;
